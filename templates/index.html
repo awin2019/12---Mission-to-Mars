@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars Data</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+  <div class="row" id="">
+    <div class="col-md-12">
+      <h3 class="heading">Latest Mars News</h3>
+      <h5 class="sub-heading"> {{ mars_data.news_title }}</h5>
+      <p> {{mars_data.news_p }}</p>
+    </div>
+  </div>
+
+  </div>
+    <div class="container-fluid">
+        <div class="col-md-7">
+          <h3 class="heading">Featured Mars Image</h3>
+          <img src="{{ mars_data.full_image_url }}" alt="Mars" style="width: 80%;">
+
+    </div>
+
+  </div>
+    <div class="col-md-5">
+        <ul>
+            <h3>Current Mars Weather</h3>
+            {{mars_data.weather_tweet}}
+        </ul>      
+          
+        <ul>
+            <h3>Mars Facts</h3>
+            {{ mars_data.html_table|safe }}
+            <a href="{{ mars_data.html_table }}"></a>
+        </ul>
+    </div>
+  </div>  
+
+<div class="container-fluid">
+  <h4>Mars Hemispheres</h4>
+  <div class="col-md-7">
+      <h6 class="heading">Cerberus</h6>
+      <img src="{{ mars_data.cerberus }}" alt="Cerberus" style="width: 30%;">
+  </div>
+
+  <div class="col-md-7">
+      <h6 class="heading">Schiaparelli</h6>
+      <img src="{{ mars_data.schiaparelli }}" alt="schiaparelli" style="width: 30%;">
+  </div>
+
+  <div class="col-md-7">
+      <h6 class="heading">Syrtis Major</h6>
+      <img src="{{ mars_data.syrtis }}" alt="Syrtis Major" style="width: 30%;">
+  </div>
+
+  <div class="col-md-7">
+      <h6 class="heading">Valles Marineris</h6>
+      <img src="{{ mars_data.valles }}" alt="Valles Marineris" style="width: 30%;">
+  </div>
+</div>
+
+</div>  
+</body>
+
+</html>
